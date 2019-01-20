@@ -5,13 +5,14 @@ dir_page=$dir_hugo/xcd0.github.io
 
 cd $dir_page
 hugo
-sleep 1
-git add -A .
+
+cd $dir_hugo
+git add -A $dir_hugo
 git commit -m "testing"
 git push origin master
 
 cd $dir_hugo
-git add -A .
+git add -A $dir_hugo
 git commit -m "testing"
 git push origin master
 
