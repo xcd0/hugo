@@ -1,7 +1,7 @@
 #! /bin/bash
 
-dirhugo=~/work/hugo
-dirpage=$dirhugo/xcd0.github.io
+dirhugo="$HOME/work/hugo"
+dirpage="$dirhugo/xcd0.github.io"
 echo "------------------------------"
 echo "cd $dirpage"
 echo "------------------------------"
