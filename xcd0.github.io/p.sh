@@ -1,10 +1,17 @@
 #! /bin/bash
 
-cd ~/work/hugo
+dirhugo=~/work/hugo
+dirpage=$dirpage/xcd0.github.io
+echo "cd $dirpage"
+cd $dirpage
+hugo
 git add -A .
-git commit -m "testing"
+git commit -m "testing. commit by script."
 git push origin master
-cd xcd0.github.io
+
+echo "cd $dirhugo"
+cd $dirhugo
 git add -A .
-git commit -m "testing"
+git commit -m "testing. commit by script"
 git push origin master
+
