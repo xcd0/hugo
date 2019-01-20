@@ -1,6 +1,6 @@
 baseURL = "https://xcd0.github.io/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+languageCode = "ja-jp"
+title = "xcd0.github.io"
 theme = "code-editor"
 [params]
     author = "xcd0"
