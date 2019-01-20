@@ -7,6 +7,7 @@ echo "cd $dirpage"
 echo "------------------------------"
 cd $dirpage
 hugo
+cd $dirpage/public
 git add -A .
 git commit -m "testing. commit by script."
 git push origin master
