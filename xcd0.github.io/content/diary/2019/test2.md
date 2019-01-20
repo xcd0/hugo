@@ -1,6 +1,5 @@
 ---
 title: "Test2"
 date: 2019-01-20T12:09:50+09:00
-draft: true
 ---
 
