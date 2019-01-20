@@ -1,7 +1,8 @@
 baseURL = "https://xcd0.github.io/"
 languageCode = "ja-jp"
 title = "xcd0.github.io"
-theme = "code-editor"
+#theme = "code-editor"
+theme = "learn"
 [params]
     author = "xcd0"
     locale = "ja-JP"
