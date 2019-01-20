@@ -1,18 +1,21 @@
 #! /bin/bash
 
-dir_hugo=~/work/hugo/
-dir_page=$dir_hugo/xcd0.github.io
-
-cd $dir_page
+dirhugo=~/work/hugo
+dirpage=$dirpage/xcd0.github.io
+echo "------------------------------"
+echo "cd $dirpage"
+echo "------------------------------"
+cd $dirpage
 hugo
-
-cd $dir_hugo
-git add -A $dir_hugo
-git commit -m "testing"
+git add -A .
+git commit -m "testing. commit by script."
 git push origin master
 
-cd $dir_hugo
-git add -A $dir_hugo
-git commit -m "testing"
+echo "------------------------------"
+echo "cd $dirhugo"
+echo "------------------------------"
+cd $dirhugo
+git add -A .
+git commit -m "testing. commit by script"
 git push origin master
 
