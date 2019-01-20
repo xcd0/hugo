@@ -1,0 +1,5 @@
+baseURL = "https://xcd0.github.io/docs/"
+languageCode = "en-us"
+title = "Documents: light"
+theme = "hugo-theme-techdoc"
+

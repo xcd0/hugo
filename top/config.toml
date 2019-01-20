@@ -1,6 +1,6 @@
 baseURL = "https://xcd0.github.io/"
 languageCode = "ja-jp"
-title = "Top: light"
+title = "light"
 theme = "github-project-landing-page"
 
 [params]
