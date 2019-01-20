@@ -1,13 +1,17 @@
 #! /bin/bash
 
-dirhugo=~/work/hugo
-dirpage=$dirpage/xcd0.github.io
+dirhugo="$HOME/work/hugo"
+dirio="$dirhugo/xcd0.github.io"
+dirpub="$dirio/public"
 echo "------------------------------"
-echo "cd $dirpage"
+echo "cd $dirio"
 echo "------------------------------"
-cd $dirpage
+cd $dirio
 hugo
-cd $dirpage/public
+echo "------------------------------"
+echo "cd $dirpub"
+echo "------------------------------"
+cd $dirpub
 git add -A .
 git commit -m "testing. commit by script."
 git push origin master
