@@ -1,11 +1,13 @@
 #! /bin/bash
 
-cd ~/work/hugo/xcd0.github.io
+dir_hugo=~/work/hugo/
+dir_page=$dir_hugo/xcd0.github.io
+cd $dir_page
 hugo
-git add -A .
+git add -A 
 git commit -m "testing"
 git push origin master
-cd ~/work/hugo
+cd $dir_hugo
 git add -A .
 git commit -m "testing"
 git push origin master
