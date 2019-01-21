@@ -3,29 +3,25 @@
 		<li class="c-links__item">
 			<a href="http://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title }}" target="_blank">
 				<title>twitter</title>
-				<img src="svg/twitter.svg" width="22" height="22">
+				<img src="{{ .Site.BaseURL  }}svg/twitter.svg" width="22" height="22">
 			</a>
 		</li>
-	</ul>
-	<ul class="c-links">
 		<li class="c-links__item">
 			<a href=" http://getpocket.com/edit?url={{ .Permalink }}&title={{ .Title }} " target="_blank">
 				<title>twitter</title>
-				<img src="svg/pocket.svg" width="22" height="22">
+				<img src="{{ .Site.BaseURL  }}svg/pocket.svg" width="22" height="22">
 			</a>
 		</li>
 	</ul>
 	<!-- 追加したい時用 -->
 	<!--
-	<ul class="c-links">
 		<li class="c-links__item">
 			<a href="
 				" target="_blank">
 				<title>twitter</title>
-				<img src="svg/twitter.svg" width="22" height="22">
+				<img src="{{ .Site.BaseURL  }}svg/twitter.svg" width="22" height="22">
 			</a>
 		</li>
-	</ul>
 Twitter
 http://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title }}
 はてな
