@@ -1,19 +1,23 @@
 <body>{{ $currentPage := . }}
 	<a title="Light  Reference"></a>
-	<!-- ここからヘッダーの黒いバーです -->
 	<div class="container">
+		<!-- ここからヘッダーの黒いバーです -->
 		<header>
-			<p><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> ( 0% documented (*｡･ᴗ･。*)♡  )</p>
+			<div class="content-wrapper">
+			<p>
+				<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> ( 0% documented (*｡･ᴗ･。*)♡  )
+			</p>
 			<p class="header-right">
 				<a href="https://github.com/xcd0/light"><img src="{{ .Site.BaseURL }}img/gh.png"/>View on GitHub</a>
 			</p>
-			{{ with .Site.Params.description }}
-				<p class="description">{{ . }}</p>
-			{{end}}
+			</div>
 		</header>
-	<!-- 黒いバーここまでです -->
-	<!-- ここからヘッダーの階層表示です -->
+		<!-- 黒いバーここまでです -->
 		<div class="content-wrapper">
+				{{ with .Site.Params.description }}
+					<p class="description">{{ . }}</p>
+				{{end}}
+			<!-- ここからヘッダーの階層表示です -->
 			<p id="breadcrumbs">
 				<a href="{{ .Site.BaseURL }}">Light Docs</a>
 				<img id="carat" src="{{ .Site.BaseURL }}img/carat.png" />
@@ -25,9 +29,7 @@
 	<div class="content-wrapper">
 		<!-- ここから左のサイドバーです -->
 		<nav class="sidebar">
-			<ul class="nav-groups">
-				{{ partial "menu.html" . }}
-			</ul>
+			{{ partial "menu.html" . }}
 		</nav>
 		<!-- ここまでが左のサイドバーです -->
 		<!-- ここから右側のメインのコンテンツです -->
