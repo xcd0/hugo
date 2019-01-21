@@ -25,3 +25,8 @@ JazzyもMITなので多分問題ないと思いたい...
 まあgithubなので公開してる形ではありますけどね\_(┐「ε:)\_  
 もし使う際はLightの中身コピって持って行って  
 docs/config.tomlを見ながら書いてもらえればとりあえず動くと思います（たぶん
+
+Googleの[PagesSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)では95点以上になるように心がけます_(┐「ε:)_  
+
+現時点で[top](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fxcd0.github.io%2F)も[docs](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fxcd0.github.io%2Fdocs%2F)も100点でした(2019/01/21)  
+
