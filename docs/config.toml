@@ -45,10 +45,10 @@ theme = "Light"
 # Social accounts. Link to these accounts are displayed in the header and
 # footer
 	twitter = "Your Twitter username"
-	facebook = "Your Facebook username"
+#	facebook = "Your Facebook username"
 #	instagram = "Your Instagram username"
 #	googleplus = "Your Google+ account URL" # https://plus.google.com/u/0/xxxxxx
-	github = "Your GitHub username"
+#	github = "Your GitHub username"
 #	gitlab = "Your GitLab username"
 #	npm = "Your npm username"
 #	codepen = "Your CodePen username"
@@ -59,9 +59,9 @@ theme = "Light"
 #	tumblr = "Your Tumblr username"
 #	vimeo = "Your Vimeo username"
 #	youtube = "Your YouTube username"
-	linkedin = "Your LinkedIn username"
+#	linkedin = "Your LinkedIn username"
 # Disqus shortname
-	disqus = ""
+#	disqus = ""
 # Google Analytics API key.
 #	ga_api_key = "Your Google Analytics tracking id"
 #	author = "Your Name"
