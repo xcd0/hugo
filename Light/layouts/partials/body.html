@@ -1,11 +1,11 @@
 <body>{{ $currentPage := . }}
-	<a title="Light  Reference"></a>
+	<a title="{{ .Site.Title }}"></a>
 	<div class="container">
 		<!-- ここからヘッダーの黒いバーです -->
 		<header>
 			<div class="content-wrapper">
 			<p>
-				<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> ( 0% documented (*｡･ᴗ･。*)♡  )
+			<a href="{{ .Site.BaseURL }}">{{ .Site.Params.sitetitle }}</a> 　 {{ .Site.Params.sitecomment  }}
 			</p>
 			<p class="header-right">
 				<a href="https://github.com/xcd0/light"><img src="{{ .Site.BaseURL }}img/gh.png"/>View on GitHub</a>
@@ -19,7 +19,7 @@
 				{{end}}
 			<!-- ここからヘッダーの階層表示です -->
 			<p id="breadcrumbs">
-				<a href="{{ .Site.BaseURL }}">Light Docs</a>
+			<a href="{{ .Site.BaseURL }}">{{ .Site.Params.sitesubtitle  }}</a>
 				<img id="carat" src="{{ .Site.BaseURL }}img/carat.png" />
 				{{ .Name }}
 			</p>

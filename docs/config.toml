@@ -41,6 +41,10 @@ theme = "Light"
 
 
 [params]
+	sitetitle = "Light Documents" # 黒いバーの文字列
+	sitecomment = "( 0% documented (*｡･ᴗ･。*)♡  )" # 黒いバーの文字列
+
+	sitesubtitle = "Light Documents" # 黒いバーの下の＞の左の文字列
 	paginate = 10
 # Social accounts. Link to these accounts are displayed in the header and
 # footer
