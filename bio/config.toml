@@ -1,0 +1,12 @@
+baseURL = "https://xcd0.github.io/bio/"
+languageCode = "ja-jp"
+title = "Biography"
+theme = "academic"
+
+[params]
+    description = "xcd0 biography"
+
+    author = "xcd0"
+    author_url = "http://github.com/xcd0"
+    locale = "ja-JP"
+
