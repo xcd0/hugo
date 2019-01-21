@@ -1,6 +1,8 @@
 ---
-title: "Diary"
+title: "Ligit Document"
 date: 2019-01-20T17:11:32+09:00
 ---
-hugo/docs/content/diary/\_index.md
 
+まあそのうち作っていきたいドキュメントのページです\_(┐「ε:)\_  
+最初からハードにやると続かないですしね  
+まったりやっていきますよ \_(:3 」∠ )\_ 

@@ -1,0 +1,29 @@
+{{ if or ( .Site.Params.twitter ) ( .Site.Params.facebook ) ( .Site.Params.youtube ) ( .Site.Params.linkedin ) }}
+<div class="share-menu">
+<ul class="c-links">
+	{{ with .Site.Params.twitter }}
+	<li class="c-links__item">
+		<a href="https://twitter.com/{{ . }}" target="_blank">
+			<title>twitter</title>
+			<img src="svg/twitter.svg" width="22" height="22">
+		</a>
+	</li>
+	{{ end }}
+	{{ with .Site.Params.youtube }}
+	<li class="c-links__item">
+		<a href="https://www.youtube.com/user/{{ . }}" target="_blank">
+				<title>youtube</title>
+				<img src="svg/youtube.svg" width="22" height="22">
+		</a>
+	</li>
+	{{ end }}
+	{{ with .Site.Params.linkedin }}
+	<li class="c-links__item">
+		<a href="https://linkedin.com/in/{{ . }}" target="_blank">
+			<img src="svg/linkedin.svg" width="22" height="22">
+		</a>
+	</li>
+	{{ end }}
+</ul>
+</div>
+{{ end }}
