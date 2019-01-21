@@ -1,0 +1,44 @@
+{{/* テンプレート定義しちゃう */}}
+	{{- define "hierarchy" }}
+		<ul class="nav-self1" style="list-style: none;"></ul>
+		<li class="nav-group-name">
+			<!--<a href="{{ .RelPermalink }}">{{ .Section }}</a>-->
+			<a href="{{ .RelPermalink }}">{{ .Title }}</a>
+			{{/* カレントセクション直下のページリスト（ホームは処理分ける） */}}
+			<ul class="nav-self1" style="list-style: none;">
+				{{ if .IsHome }}
+					<li class="nav-group-name">
+						{{/* ホームは$.Site.RegularPagesのSectionがないのでこれで取り出せる */}}
+						{{- range where $.Site.RegularPages "Section" "" }}
+							<li class="nav-group-task"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+						{{- end }}
+					</li>
+				{{ else }}
+					{{- range .Pages }}
+						<li class="nav-group-task"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+					{{- end }}
+				{{ end }}
+			</ul>
+			{{/* カレントセクション直下のセクションは再帰処理 */}}
+			{{/* range .Site.Home.Sections */}}
+			{{- range .Sections.ByWeight }}
+				{{- template "hierarchy" . }}
+			{{- end }}
+		</li>
+	{{- end }}
+{{/* テンプレート定義ここまでで終わり */}}
+
+{{/* テンプレート呼び出して、一覧読み込む */}}
+	{{ template "hierarchy" .Site.Home }}
+{{/* 終わり */}}
+
+<!--{{/* 見本だよ */}}
+	<li class="nav-group-name">
+		<a href="Classes.html">Classes</a>
+		<ul class="nav-group-tasks">
+			<li class="nav-group-task"><a href="Classes/Args.html">Args</a></li>
+			<li class="nav-group-task"><a href="Classes/Args.html">Args</a></li>
+			<li class="nav-group-task"><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+		</ul>
+	</li>
+-->
