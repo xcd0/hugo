@@ -25,7 +25,9 @@
 										<a href="{{ .RelPermalink }}">{{ .Title }}</a>
 									</div>
 									{{/* カレントセクション直下のページリスト（ホームは処理分ける） */}}
-									{{ range .Pages.ByTitle }}
+									{{/* range .Pages.ByTitle */}}
+									{{/* range .Pages.ByLinkTitle */}}
+									{{ range .Pages.ByPublishDate }}
 										<li class="nav-group-task"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
 									{{ end }}
 									{{/* カレントセクション直下のセクションは再帰処理 */}}
