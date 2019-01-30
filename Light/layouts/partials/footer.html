@@ -4,12 +4,11 @@
 	{{ partial "sns.html" . }}
 	<!-- ここまでがSNSボタンです -->
 	<!-- ここからが著作権情報です -->
-	<p>&copy; 2019 <a class="link" href="https://xcd0.com" target="_blank" rel="external">xcd0</a>.
+	<div class="div-center"><p>
+	&copy; 2019 <a class="link" href="https://xcd0.com" target="_blank" rel="external">xcd0</a>.
 		All rights reserved.
-		Last updated on {{ $.Lastmod.Format ( $.Site.Params.dateformat | default "2 Jan 2006") }}
-		/ Published on {{ $.PublishDate.Format ( $.Site.Params.dateformat | default "2 Jan 2006") -}}. 
 		Designed by
 		<a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">Jazzy ♪♫ v0.5.0</a>.
-	</p>
+	</p></div>
 	<!-- ここまでが著作権情報です -->
 </section>
