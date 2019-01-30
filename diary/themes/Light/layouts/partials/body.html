@@ -1,0 +1,66 @@
+<body>{{ $currentPage := . }}
+	<a title="{{ .Site.Title }}"></a>
+	<div class="container">
+		<!-- ここからヘッダーの黒いバーです -->
+		<header>
+			<div class="content-wrapper">
+			<p>
+			<a href="{{ .Site.BaseURL }}">{{ .Site.Params.sitetitle }}</a> 　 {{ .Site.Params.sitecomment  }}
+			</p>
+			<p class="header-right">
+				<a href="https://github.com/xcd0/light"><img src="{{ .Site.BaseURL }}img/gh.png"/>View on GitHub</a>
+			</p>
+			</div>
+		</header>
+		<!-- 黒いバーここまでです -->
+		<div class="content-wrapper">
+				{{ with .Site.Params.description }}
+					<p class="description">{{ . }}</p>
+				{{end}}
+			<!-- ここからヘッダーの階層表示です -->
+			<p id="breadcrumbs">
+			<a href="{{ .Site.BaseURL }}">{{ .Site.Params.sitesubtitle  }}</a>
+				<img id="carat" src="{{ .Site.BaseURL }}img/carat.png" />
+				{{ .Name }}
+			</p>
+		</div>
+	</div>
+	<!-- ここまでヘッダーです -->
+	<div class="content-wrapper">
+		<!-- ここから左のサイドバーです -->
+		<nav class="sidebar">
+			{{ partial "menu.html" . }}
+		</nav>
+		<!-- ここまでが左のサイドバーです -->
+		<!-- ここから右側のメインのコンテンツです -->
+		<article class="main-content">
+			<section>
+				<section class="section">
+					<article>
+						<!-- これがメインコンテンツです -->
+						<h1>{{ .Title }}</h1>
+						{{ .Content }}
+						<!-- これがメインコンテンツです -->
+					</article>
+					<!-- ここからが右側のメインのコンテンツのフッターです -->
+					<section id="footer">
+						<!-- ここからがSNSボタンです -->
+						{{ partial "sns.html" . }}
+						<!-- ここまでがSNSボタンです -->
+						<!-- ここからが著作権情報です -->
+						<p>&copy; 2019 <a class="link" href="https://xcd0.com" target="_blank" rel="external">xcd0</a>.
+							All rights reserved.
+							Last updated on {{ $.Lastmod.Format ( $.Site.Params.dateformat | default "2 Jan 2006") }}
+							/ Published on {{ $.PublishDate.Format ( $.Site.Params.dateformat | default "2 Jan 2006") -}}. 
+							Designed by
+							<a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">Jazzy ♪♫ v0.5.0</a>.
+						</p>
+						<!-- ここまでが著作権情報です -->
+					</section>
+					<!-- ここまでが右側のメインのコンテンツのフッターです -->
+				</section>
+			</section>
+		</article>
+		<!-- ここまでが右側のメインのコンテンツです -->
+	</div>
+</body>
