@@ -27,40 +27,44 @@
 	</div>
 	<!-- ここまでヘッダーです -->
 	<div class="content-wrapper">
-		<!-- ここから左のサイドバーです -->
-		<nav class="sidebar">
-			{{ partial "menu.html" . }}
-		</nav>
-		<!-- ここまでが左のサイドバーです -->
-		<!-- ここから右側のメインのコンテンツです -->
-		<article class="main-content">
-			<section>
-				<section class="section">
-					<article>
-						<!-- これがメインコンテンツです -->
-						<h1>{{ .Title }}</h1>
-						{{ .Content }}
-						<!-- これがメインコンテンツです -->
-					</article>
-					<!-- ここからが右側のメインのコンテンツのフッターです -->
-					<section id="footer">
-						<!-- ここからがSNSボタンです -->
-						{{ partial "sns.html" . }}
-						<!-- ここまでがSNSボタンです -->
-						<!-- ここからが著作権情報です -->
-						<p>&copy; 2019 <a class="link" href="https://xcd0.com" target="_blank" rel="external">xcd0</a>.
-							All rights reserved.
-							Last updated on {{ $.Lastmod.Format ( $.Site.Params.dateformat | default "2 Jan 2006") }}
-							/ Published on {{ $.PublishDate.Format ( $.Site.Params.dateformat | default "2 Jan 2006") -}}. 
-							Designed by
-							<a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">Jazzy ♪♫ v0.5.0</a>.
-						</p>
-						<!-- ここまでが著作権情報です -->
+		<!-- ここから左のサイドバーです {{{ -->
+		<div class="leftorbottom">
+			<nav class="sidebar">
+				{{ partial "menu.html" . }}
+			</nav>
+		</div>
+		<!-- ここまでが左のサイドバーです }}} -->
+		<!-- ここから右側のメインのコンテンツです {{{ -->
+		<div class="rightortop">
+			<article class="main-content">
+				<section>
+					<section class="section">
+						<article>
+							<!-- これがメインコンテンツです -->
+							<h1>{{ .Title }}</h1>
+							{{ .Content }}
+							<!-- これがメインコンテンツです -->
+						</article>
+						<!-- ここからが右側のメインのコンテンツのフッターです -->
+						<section id="footer">
+							<!-- ここからがSNSボタンです -->
+							{{ partial "sns.html" . }}
+							<!-- ここまでがSNSボタンです -->
+							<!-- ここからが著作権情報です -->
+							<p>&copy; 2019 <a class="link" href="https://xcd0.com" target="_blank" rel="external">xcd0</a>.
+								All rights reserved.
+								Last updated on {{ $.Lastmod.Format ( $.Site.Params.dateformat | default "2 Jan 2006") }}
+								/ Published on {{ $.PublishDate.Format ( $.Site.Params.dateformat | default "2 Jan 2006") -}}. 
+								Designed by
+								<a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">Jazzy ♪♫ v0.5.0</a>.
+							</p>
+							<!-- ここまでが著作権情報です -->
+						</section>
+						<!-- ここまでが右側のメインのコンテンツのフッターです -->
 					</section>
-					<!-- ここまでが右側のメインのコンテンツのフッターです -->
 				</section>
-			</section>
-		</article>
-		<!-- ここまでが右側のメインのコンテンツです -->
+			</article>
+		</div>
+		<!-- ここまでが右側のメインのコンテンツです }}} -->
 	</div>
 </body>
