@@ -1,0 +1,12 @@
+
+			<article class="main-content">
+				<section class="section">
+					<!-- これがメインコンテンツです -->
+					<h1>{{ .Title }}</h1>
+					{{ .Content }}
+					<!-- これがメインコンテンツです -->
+				</section>
+			</article>
+			<!-- ここからが右側のメインのコンテンツのフッターです -->
+			{{ partial "footer.html" . }}
+			<!-- ここまでが右側のメインのコンテンツのフッターです -->
