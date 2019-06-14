@@ -1,118 +1,31 @@
 
-			<nav class="sidebar">
-				<div class="sidebar-contents">
-					{{/* テンプレート定義しちゃう */}}
-					{{ define "hierarchy" }}
-						{{ if .IsHome }}
-							{{/* ホームだけ別処理することで3階層に対応 */}}
-							<ul class="nav-groups">
-								<li class="nav-group-name-top">
-									<a href="{{ .RelPermalink }}">{{ .Title }}</a>
-									{{/* ホームは$.Site.RegularPagesのSectionがないのでこれで取り出せる */}}
-									{{ range where $.Site.RegularPages "Section" "" }}
-										<li class="nav-group-task-top"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-									{{ end }}
-								</li>
-							</ul>
-							{{ range .Sections.ByWeight }}
-								{{ template "hierarchy" . }}
-							{{ end }}
-						{{ else }}
-							<ul class="nav-groups">
-								<li class="nav-group-name">
-									<!--<a href="{{ .RelPermalink }}">{{ .Section }}</a>-->
-									<div class="nav-group-middle-name">
-										<a href="{{ .RelPermalink }}">{{ .Title }}</a>
-									</div>
-									{{/* カレントセクション直下のページリスト（ホームは処理分ける） */}}
-									{{/* range .Pages.ByTitle */}}
-									{{/* range .Pages.ByLinkTitle */}}
-									{{ range .Pages.ByPublishDate }}
-										<li class="nav-group-task"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-									{{ end }}
-									{{/* カレントセクション直下のセクションは再帰処理 */}}
-									{{/* range .Site.Home.Sections */}}
-									{{ range .Sections.ByTitle }}
-										{{ template "hierarchy" . }}
-									{{ end }}
-								</li>
-							</ul>
-						{{ end }}
-					{{ end }}
-					{{/* テンプレート定義ここまでで終わり */}}
-					{{/* テンプレート呼び出して、一覧読み込む */}}
-					{{ template "hierarchy" .Site.Home }}
-					{{/* 終わり */}}
-				<!--
-					{{ $currentnode := . }}
-					<nav>
-						<ul class="nav-groups">
-							<li class="{{ if .IsHome }}nav-group-name-top{{else}}nav-group-name-top{{ end }}"><a href="{{ .Site.BaseURL }}">Home</a></li>
-							{{ if eq .Site.Params.ordersectionsby "title" }}
-								{{ range .Site.Home.Sections.ByTitle }}
-									{{template "menu" dict "sect" . "currentnode" $currentnode}}
-								{{ end }}
-							{{ else }}
-								{{ range .Site.Home.Sections.ByWeight }}
-									{{template "menu" dict "sect" . "currentnode" $currentnode}}
-								{{ end }}
-							{{ end}}
-						</ul>
-					</nav>
-				</div>
-				{{define "menu"}}
-					{{ $currentNode := .currentnode }}
-					{{ with .sect }}
-						{{ if .IsSection }}
-							{{ if in .Site.Params.menu_exclusion .Section }}
-							{{ else }}
-								{{ safeHTML .Params.head }}
-								<li class="{{ if .IsAncestor $currentNode }}nav-group-name{{else}}nav-group-middle-name{{ end }}{{ if eq .UniqueID $currentNode.UniqueID }}nav-groups{{ end }}{{ if .Params.alwaysopen }}nav-groups{{ end }}">
-									<a href="{{ .URL }}">{{ safeHTML .Params.Pre }}{{ .Title }}{{ safeHTML .Params.Post }}</a>
-									{{ $numberOfPages := (add (len .Pages) (len .Sections)) }}
-										{{if ne $numberOfPages 0}}
-											<ul class="{{ if .IsAncestor $currentNode }}nav-groups{{else}}nav-groups{{ end }}">
-												{{ .Scratch.Set "pages" .Pages }}
-												{{ if .Sections }}
-													{{ .Scratch.Set "pages" (.Pages | union .Sections) }}
-												{{ end }}
-												{{ $pages := (.Scratch.Get "pages") }}
-												{{ if eq .Site.Params.ordersectionsby "title" }}
-													{{ range $pages.ByTitle }}
-														{{ if and .Params.hidden (not $.showhidden) }}
-														{{ else }}
-															{{template "menu" dict "sect" . "currentnode" $currentNode}}
-														{{ end }}
-													{{ end }}
-												{{ else }}
-													{{ range $pages.ByWeight }}
-														{{ if and .Params.hidden (not $.showhidden) }}
-														{{ else }}
-															{{template "menu" dict "sect" . "currentnode" $currentNode}}
-														{{ end }}
-													{{ end }}
-												{{ end}}
-											</ul>
-										{{end}}
-									</li>
-								{{ end }}
-							{{ else }}
-							{{ if not .Params.Hidden }}
-								<li class="{{ if eq .UniqueID $currentNode.UniqueID }}nav-groups{{else}}nav-group-task{{ end }}"><a href="{{ .URL }}">{{ safeHTML .Params.Pre }}{{ .Title }}{{ safeHTML .Params.Post }}</a></li>
-							{{ end }}
-						{{ end }}
-					{{ end }}
-				{{ end }}
-				{{/* 使ってないコードだよ これもちゃんと動くよ！ */}}
-				-->
-				<!--{{/* 見本だよ */}}
-					<li class="nav-group-name">
-					<a href="Classes.html">Classes</a>
-					<ul class="nav-group-tasks">
-					<li class="nav-group-task"><a href="Classes/Args.html">Args</a></li>
-					<li class="nav-group-task"><a href="Classes/Args.html">Args</a></li>
-					<li class="nav-group-task"><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
-					</ul>
-					</li>
-				-->
-			</nav>
+<nav class="sidebar">
+	<div class="sidebar-contents">
+	{{/* テンプレート定義 */}}{{ define "hierarchy" }}{{ if .IsHome }}{{/* ホームだけ別処理 */}}<ul class="nav-groups">
+		<li class="nav-group-name-top">
+			<a href="{{ .RelPermalink }}index.html">{{ .Title }}</a>
+			{{/* ホームは$.Site.RegularPagesのSectionがないのでこれで取り出せる */}} {{ range where $.Site.RegularPages "Section" "" }} <li class="nav-group-task-top"><a href="{{ .RelPermalink }}index.html">{{ .Title }}</a></li>{{ end }}
+		</li>
+	</ul>
+	{{ range .Sections.ByLinkTitle }}{{ template "hierarchy" . }}{{ end }} {{ else }}
+	<ul class="nav-groups">
+		<li class="nav-group-name">
+			<div class="nav-group-middle-name">
+				<a href="{{ .RelPermalink }}index.html">{{ .Title }}</a>
+			</div>
+			{{/* カレントセクション直下のページリスト（ホームは処理分ける） */}}{{ range .Pages.ByDate }}<li class="nav-group-task"><a href="{{ .RelPermalink }}index.html">{{ .Title }}</a></li>{{ end }}
+			{{/* カレントセクション直下のセクションは再帰処理 */}}{{ range .Sections.ByPublishDate }}{{ template "hierarchy" . }}{{ end }}
+		</li>
+	</ul>{{ end }}{{ end }}{{/* テンプレート定義ここまでで終わり */}}{{/* テンプレート呼び出して、一覧読み込む */}}
+	{{ template "hierarchy" .Site.Home }}{{/* 終わり */}}
+</nav>
+<!--
+{{/* range .Sections.ByWeight */}}
+{{/* range .Pages.ByTitle */}}
+{{/* range .Pages.ByLinkTitle */}}
+{{/* range .Pages.ByDate */}}
+{{/* range .Pages.ByPublishDate */}}
+{{/* range .Site.Home.Sections */}}
+{{/* range .Sections.ByTitle */}}
+{{/* range .Sections.ByLinkTitle.Reverse */}}
+-->

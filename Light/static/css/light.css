@@ -23,24 +23,24 @@ h1, h2, h3 {
 	font-weight: 100;
 	color: black; }
 
-h1 { font-size: 2em; }
+h1 { font-size: 1.5em; }
 
 h2 {
-	font-size: 1.6em;
+	font-size: 1.2em;
 	border-bottom: 1px solid #e2e2e2; }
 
-h3 { font-size: 1.4em; }
+h3 { font-size: 1.1em; }
 
 h4 {
-	font-size: 1.2;
+	font-size: 1.0em;
 	line-height: 1.5;
 	margin-top: 21px; }
 
 h5 {
-	font-size: 1em; }
+	font-size: 0.8em; }
 
 h6 {
-	font-size: 0.8em;
+	font-size: 0.6em;
 	color: #777; }
 
 .section-name {
@@ -210,7 +210,7 @@ li {
 }
 
 .nav-group-name-top {
-	font-size: 24px;
+	font-size: 1em;
 	font-weight: 100;
 	padding-left: 0px;
 	margin-top: 5px;
@@ -233,7 +233,7 @@ li {
 }
 
 .nav-group-middle-name {
-	font-size: 18px;
+	font-size: 1.1em;
 	font-weight: 100;
 	margin-left: 0px;
 	padding-bottom: 10px;
@@ -242,7 +242,7 @@ li {
 }
 
 .nav-group-name {
-	font-size: 18px;
+	font-size: 0.9em;
 	font-weight: 100;
 	padding-top: 0px;
 	padding-bottom: 0px;
@@ -581,3 +581,25 @@ html.dash #footer {
 }
 /* }}} */
 
+/* 表 {{{ */
+table{
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table th,table td{
+  padding: 10px 0;
+  text-align: center;
+  border: 1px #ccc solid;
+}
+
+table tr:nth-child(even){
+  background-color: #eee
+}
+
+/* }}} */
+
+.scale05 {
+    transform: scale(0.5);
+}
