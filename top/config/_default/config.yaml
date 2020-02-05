@@ -2,7 +2,7 @@ baseURL: "https://xcd0.github.io"
 theme: hugo-theme-iris
 
 # googleAnalytics: UA-123-45
-disqusShortname: hugothemeiris
+#disqusShortname: hugothemeiris
 
 # paginate: 3
 canonifyURLs: true
