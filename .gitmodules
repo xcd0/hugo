@@ -1,3 +1,6 @@
 [submodule "xcd0.github.io/xcd0.github.io/public"]
 	path = xcd0.github.io/xcd0.github.io/public
 	url = https://github.com/xcd0/xcd0.github.io.git
+[submodule "top/themes/hugo-theme-iris"]
+	path = top/themes/hugo-theme-iris
+	url = https://github.com/peaceiris/hugo-theme-iris.git

@@ -1,0 +1,25 @@
+
+	<header>
+		<!-- ここからヘッダーの黒いバーです -->
+		<div class="black-bar">
+			<div class="black-bar-contents">
+				<p class="header-left">
+					<a href="{{ .Site.BaseURL }}">{{ .Site.Params.sitetitle }}</a> 　 {{ .Site.Params.sitecomment  }}
+				</p>
+				<p class="header-right">
+					<a href="https://github.com/xcd0/light"><img src="{{ .Site.BaseURL }}img/gh.png"/>View on GitHub</a>
+				</p>
+			</div>
+		</div>
+		<!-- 黒いバーここまでです -->
+		<!-- ここからヘッダーの階層表示です -->
+		<div class="header-stair">
+				{{ with .Site.Params.description }} <p class="description">{{ . }}</p> {{end}}
+			<p id="breadcrumbs">
+				<a class="stair-a" href="{{ .Site.BaseURL }}">{{ .Site.Params.sitesubtitle  }}</a>
+				<img id="carat" src="{{ .Site.BaseURL }}img/carat.png" />
+				{{ .Name }}
+			</p>
+		</div>
+		<!-- ここまでヘッダーの階層表示です -->
+	</header>

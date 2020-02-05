@@ -1,0 +1,26 @@
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="icon" sizes="any" href="./favicon.svg" type="image/svg+xml">
+	<link rel="mask-icon" href="./favicon.svg" color="black">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	{{- if eq .Title "" }}<title>{{ .Site.Title }}</title>{{- else }}<title>{{ .Title }} - {{ .Site.Title }}</title>{{- end }}
+	{{ .Hugo.Generator }}
+	<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/light.css" />
+	<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/highlight.css" />
+	<script src="{{ .Site.BaseURL }}js/jquery.min.js" defer></script>
+	<script src="{{ .Site.BaseURL }}js/jazzy.js" defer></script>
+	<script src="{{ .Site.BaseURL }}js/mermaid.js" defer></script>
+	<script src="{{ .Site.BaseURL }}js/viz.js" defer></script>
+	<script src="{{ .Site.BaseURL }}js/full.render.js" defer></script>
+	<!--<script src="http://flowchart.js.org/flowchart-latest.js"></script>-->
+	<!--
+	<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/light.css" />
+	<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/highlight.css" />
+	<script src="{{ .Site.BaseURL }}js/jquery.min.js" defer></script>
+	<script src="{{ .Site.BaseURL }}js/jazzy.js" defer></script>
+	<script src="{{ .Site.BaseURL }}js/mermaid.js" defer></script>
+	<script src="{{ .Site.BaseURL }}js/viz.js" defer></script>
+	<script src="{{ .Site.BaseURL }}js/full.render.js" defer></script>
+	-->
+</head>
